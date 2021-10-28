@@ -4,7 +4,9 @@
   "description": "you know, frogs",
   "main": "index.js",
   "scripts": {
-    "compile": "tsc",
+    "compile": "rm -rf dist && tsc -p .",
+    "compile:watch": "tsc -w",
+    "start": "node dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
