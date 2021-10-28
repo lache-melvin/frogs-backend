@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lache-melvin/FROGS.git"
+    "url": "git+https://github.com/lache-melvin/frogs-backend.git"
   },
   "author": "Laché Melvin <lache.melvin@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lache-melvin/FROGS/issues"
+    "url": "https://github.com/lache-melvin/frogs-backend/issues"
   },
-  "homepage": "https://github.com/lache-melvin/FROGS#readme",
+  "homepage": "https://github.com/lache-melvin/frogs-backend#readme",
   "devDependencies": {
     "@typescript-eslint/parser": "^5.2.0",
     "eslint": "^8.1.0",
