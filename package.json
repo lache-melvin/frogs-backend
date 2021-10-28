@@ -1,0 +1,23 @@
+{
+  "name": "frogs",
+  "version": "0.0.1",
+  "description": "you know, frogs",
+  "main": "index.js",
+  "scripts": {
+    "compile": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lache-melvin/FROGS.git"
+  },
+  "author": "Laché Melvin <lache.melvin@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lache-melvin/FROGS/issues"
+  },
+  "homepage": "https://github.com/lache-melvin/FROGS#readme",
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  }
+}
