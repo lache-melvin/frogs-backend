@@ -1,5 +1,5 @@
 export default {
   Query: {
-    testMessage: (): string => 'Hello world!'
-  }
-}
+    testMessage: (): string => "Hello world!",
+  },
+};

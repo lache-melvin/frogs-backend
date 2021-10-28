@@ -1,10 +1,8 @@
-import { ApolloServer } from 'apollo-server'
+import { ApolloServer } from "apollo-server";
 
-import resolvers from './resolvers'
-import typeDefs from './typeDefs'
+import resolvers from "./resolvers";
+import typeDefs from "./typeDefs";
 
-const server = new ApolloServer({ resolvers, typeDefs })
+const server = new ApolloServer({ resolvers, typeDefs });
 
-server.listen()
-  .then(({ url }) => console.log(`Server is ready at ${url}`))
-
+server.listen().then(({ url }) => console.log(`Server is ready at ${url}`));
