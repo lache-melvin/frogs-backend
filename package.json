@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/lache-melvin/frogs-backend#readme",
   "devDependencies": {
+    "@types/node": "^16.11.6",
     "@typescript-eslint/parser": "^5.2.0",
     "eslint": "^8.1.0",
     "eslint-config-prettier": "^8.3.0",
@@ -33,7 +34,10 @@
   },
   "dependencies": {
     "apollo-server": "^3.4.0",
-    "graphql": "^15.7.2"
+    "graphql": "^15.7.2",
+    "reflect-metadata": "^0.1.13",
+    "sqlite3": "^4.2.0",
+    "typeorm": "^0.2.38"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
