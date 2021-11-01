@@ -1,15 +1,16 @@
-import { createConnection } from "typeorm";
+import { Connection } from "typeorm";
 import { Frog } from "./entity/Frog";
 
-async function getAllFrogs(): Promise<Array<Frog>> {
-  const connection = await createConnection();
+export default function makeResolvers(connection: Connection) {
+  return {
+    Query: {
+      frogs: async () => await getAllFrogs(connection),
+    },
+  };
+}
+
+async function getAllFrogs(connection: Connection): Promise<Array<Frog>> {
   let frogRepository = connection.getRepository(Frog);
   const frogs = await frogRepository.find();
   return frogs;
 }
-
-export default {
-  Query: {
-    frogs: getAllFrogs,
-  },
-};

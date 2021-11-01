@@ -3,11 +3,13 @@ import { ApolloServer } from "apollo-server";
 import { createConnection } from "typeorm";
 import { Frog } from "./entity/Frog";
 
-import resolvers from "./resolvers";
+import makeResolvers from "./resolvers";
 import typeDefs from "./typeDefs";
 
 (async () => {
   try {
+    const connection = await createConnection();
+    const resolvers = makeResolvers(connection);
     // --- If u got no frogs ---
     // console.log("Inserting a new frog into the database...");
     // const frog = new Frog();
@@ -15,10 +17,6 @@ import typeDefs from "./typeDefs";
     // frog.breed = "Tree Frog";
     // await frogRepository.save(frog);
     // console.log("saved");
-
-    // console.log("Loading frogs from the database...");
-    // const frogs = await frogRepository.find();
-    // console.log("Loaded frogs: ", frogs);
 
     const server = new ApolloServer({
       resolvers,
