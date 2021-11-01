@@ -8,9 +8,6 @@ import typeDefs from "./typeDefs";
 
 (async () => {
   try {
-    const connection = await createConnection();
-    let frogRepository = connection.getRepository(Frog);
-
     // --- If u got no frogs ---
     // console.log("Inserting a new frog into the database...");
     // const frog = new Frog();
@@ -19,13 +16,17 @@ import typeDefs from "./typeDefs";
     // await frogRepository.save(frog);
     // console.log("saved");
 
-    console.log("Loading frogs from the database...");
-    const frogs = await frogRepository.find();
-    console.log("Loaded frogs: ", frogs);
+    // console.log("Loading frogs from the database...");
+    // const frogs = await frogRepository.find();
+    // console.log("Loaded frogs: ", frogs);
 
-    const server = new ApolloServer({ resolvers, typeDefs });
+    const server = new ApolloServer({
+      resolvers,
+      typeDefs,
+    });
 
-    server.listen().then(({ url }) => console.log(`Server is ready at ${url}`));
+    const { url } = await server.listen();
+    console.log(`Server is ready at ${url}`);
   } catch (error) {
     console.error(error);
   }
