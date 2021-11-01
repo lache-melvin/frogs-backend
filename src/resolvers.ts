@@ -5,6 +5,8 @@ export default function makeResolvers(connection: Connection) {
   return {
     Query: {
       frogs: async () => await getAllFrogs(connection),
+      frog: async (_: any, { id }: { id: any }) =>
+        await getFrog(id, connection),
     },
     Mutation: {
       addFrog: async (
@@ -21,6 +23,15 @@ async function getAllFrogs(connection: Connection): Promise<Array<Frog>> {
   return frogs;
 }
 
+async function getFrog(
+  id: any,
+  connection: Connection
+): Promise<Frog | undefined> {
+  let frogRepository = connection.getRepository(Frog);
+  const frog = await frogRepository.findOne(id);
+  return frog;
+}
+
 async function insertFrog(
   frog: { name: string; breed: string },
   connection: Connection
@@ -31,6 +42,6 @@ async function insertFrog(
   newFrog.breed = frog.breed;
   await frogRepository.save(newFrog);
 
-  const createdFrog = await frogRepository.findOne(newFrog.id);
+  const createdFrog = await getFrog(newFrog.id, connection);
   return createdFrog;
 }
