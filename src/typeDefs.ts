@@ -5,6 +5,10 @@ export default gql`
     frogs: [Frog]
   }
 
+  type Mutation {
+    addFrog(name: String!, breed: String!): Frog
+  }
+
   type Frog {
     id: ID!
     name: String

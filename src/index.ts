@@ -10,13 +10,6 @@ import typeDefs from "./typeDefs";
   try {
     const connection = await createConnection();
     const resolvers = makeResolvers(connection);
-    // --- If u got no frogs ---
-    // console.log("Inserting a new frog into the database...");
-    // const frog = new Frog();
-    // frog.name = "Filip";
-    // frog.breed = "Tree Frog";
-    // await frogRepository.save(frog);
-    // console.log("saved");
 
     const server = new ApolloServer({
       resolvers,
